@@ -1,6 +1,15 @@
+use crate::num_rational::*;
+
 #[derive(Debug)]
 pub struct MonetaryValue<T> {
     value: T,
+    precision: u8,
+}
+
+#[derive(Debug)]
+// This num-rational library only support i32 and i64
+pub struct LosslessMonetaryValue<T> {
+    value: Ratio<T>,
     precision: u8,
 }
 
